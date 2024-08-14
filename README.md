@@ -1,1 +1,1 @@
-# buds-9
+# redmi band 9
