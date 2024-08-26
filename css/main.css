@@ -153,6 +153,15 @@ position: relative;
 overflow-wrap: break-word;
 }
 
+h2.icon-center {
+text-align: center;
+font-size: 1.3rem;
+font-weight: 9000;
+font-family: 'CamphorPro', sans-serif;
+position: relative;
+overflow-wrap: break-word;
+}
+
 p.p-center {
 font-size: 1.1rem;
 text-align: center;
@@ -258,15 +267,15 @@ flex-direction: column;
 max-width: 47%;
 }
 
-.grid-23{
+.grid-23 {
 display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
-margin-top: 2rem;
 align-content: center;
 justify-content: center;
 align-items: center;
-gap: 1rem;
+gap: 7rem;
+margin: 0 auto;
 }
 
 /***************************** Mobile *************************************/
