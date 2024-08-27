@@ -153,6 +153,15 @@ position: relative;
 overflow-wrap: break-word;
 }
 
+h2.subtitle-grid {
+text-align: left;
+font-size: 2rem;
+font-weight: 9000;
+font-family: 'CamphorPro', sans-serif;
+position: relative;
+overflow-wrap: break-word;
+}
+
 h2.icon-center {
 text-align: center;
 font-size: 1.3rem;
@@ -221,6 +230,43 @@ flex-direction: column;
 max-width: 38%;
 }
 
+.grid-04{
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+margin-top: 2rem;
+align-content: center;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+}
+
+.grid-04-box {
+position: absolute;
+right: 0;
+left: 43rem;
+top: 13rem;
+bottom: 0;
+display: flex;
+flex-direction: column;
+max-width: 45%;
+height: 20rem;
+gap: 1rem;
+}
+
+
+
+.grid-05{
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+margin-top: 2rem;
+align-content: center;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+}
+
 .grid-05-box {
 position: absolute;
 right: 0;
@@ -232,17 +278,6 @@ flex-direction: column;
 max-width: 64%;
 height: 13rem;
 margin: 0 auto;
-}
-
-.grid-05{
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-margin-top: 2rem;
-align-content: center;
-justify-content: center;
-align-items: center;
-gap: 1rem;
 }
 
 .grid-container-11 {
