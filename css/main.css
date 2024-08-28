@@ -85,12 +85,12 @@ border-right: 2px solid var(--background-silver);
 :root{
 --background-white: #ffff;
 --background-black: #111;
---background-silver: #e7e7e7;
+--background-silver: #cfcfcf;
 
 --text-white: #fff;
 --text-preto: #000;
 --text-verde: #00f67b;
---text-silver: #e7e7e7;
+--text-silver: #c7c7c7;
 }
 
 .txt-branco {color: var(--text-white);}
@@ -203,6 +203,19 @@ position: relative;
 overflow-wrap: break-word;
 }
 
+p.p-info {
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: 'CamphorPro', sans-serif;
+}
+p.p-info-center {
+    text-align:center;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: 'CamphorPro', sans-serif;
+}
+
 p.p-notas{
 text-align: left;
 font-size: 1rem;
@@ -234,7 +247,7 @@ flex-direction: column;
 max-width: 38%;
 }
 
-.grid-04, .grid-22{
+.grid-04{
 display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
@@ -242,19 +255,20 @@ margin-top: 2rem;
 gap: 1rem;
 align-items: stretch;
 justify-content: flex-start;
+margin-bottom: 5rem;
 }
 
 .grid-04-box {
-position: absolute;
-right: 0;
-left: 43rem;
-top: 13rem;
-bottom: 0;
-display: flex;
-flex-direction: column;
-max-width: 45%;
-height: 20rem;
-gap: 1rem;
+    position: absolute;
+    right: 0;
+    left: 43rem;
+    top: 10rem;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 45%;
+    height: 20rem;
+    gap: 1rem;
 }
 
 .grid-05{
@@ -340,7 +354,15 @@ flex-direction: column;
 max-width: 47%;
 }
 
-
+.grid-22{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 2rem;
+    gap: 1rem;
+    align-items: stretch;
+    justify-content: flex-start;
+}
 .grid-22-box {
 position: absolute;
 right: 0;
