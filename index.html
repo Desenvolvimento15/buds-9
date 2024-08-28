@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="https://i05.appmifile.com/i18n/scm/favicon.png">
     <link rel="stylesheet" href="./css/main.css">
     <title>Xiaomi Smart Band 9</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </head>
 
@@ -149,9 +150,29 @@
             </div>
             
             </div>
+
             <div class="row-s101">
-    
-               <!--Slide-01-->              
+
+                <div class="col-sm-12-s101 spacing">
+                <div id="slider">
+                    <div id="slides">
+                      <div class="slide">
+                        <img src="./media/desktop/slide1-bg1.jpg" alt="Item 01">
+                      </div>
+                      <div class="slide">
+                        <img src="./media/desktop/slide1-bg2.jpg" alt="Item 02">
+                      </div>
+                      <div class="slide">
+                        <img src="./media/desktop/slide1-bg3.jpg" alt="Item 03">
+                      </div>
+                      <div class="slide">
+                        <img src="./media/desktop/slide1-bg4.jpg" alt="Item 04">
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div id="dots-container"></div>
+                </div>
             </div>
 
             <div class="row-s101">
@@ -174,7 +195,59 @@
             </div>
 
             <div class="row-s101">
-    
+                <div class="col-sm-12-s101">
+
+                    <div class="slideshow-container-two">
+
+                        <div class="slide-two fade">
+                            <img src="./media/desktop/slide2-bg1.jpg" alt="Imagem 1" class="img-fluid">
+                            <div class="text-slide">
+                                <h2 class="subtitle-slide">O Bracelete Mystic Rose com a alça de corrente da Xiaomi </h2>
+                                <h2 class="subtitle-slide">Elegância e charme combinados</h2>
+
+                                <p class="p-left">A perfeita combinação de  elegância e requinte, o bracelete de corrente fica fabulosa em todas as ocasiões.</p>
+
+                                <p class="p-info">*O bracelete solto pode causar desvios na frequência cardíaca, no nível de oxigênio no sangue, no monitoramento do sono e em outros dados. *o bracelete é um acessórios de varejo e devem ser adquiridas separadamente.</p>
+            
+                            </div>
+                        </div>
+                
+                        <div class="slide-two fade">
+                            <img src="./media/desktop/slide2-bg2.jpg" alt="Imagem 2" class="img-fluid">
+                            <div class="text-slide">Texto do Slide 2</div>
+                        </div>
+                
+                
+                        <div class="slide-two fade">
+                            <img src="./media/desktop/slide2-bg3.jpg" alt="Imagem 3" class="img-fluid">
+                            <div class="text-slide">Texto do Slide 4</div>
+                        </div>
+
+                        <div class="slide-two fade">
+                            <img src="./media/desktop/slide2-bg4.jpg" alt="Imagem 4" class="img-fluid">
+                            <div class="text-slide">Texto do Slide 4</div>
+                        </div>
+
+                        <div class="slide-two fade">
+                            <img src="./media/desktop/slide2-bg5.jpg" alt="Imagem 5" class="img-fluid">
+                            <div class="text-slide">Texto do Slide 5</div>
+                        </div>
+
+                        <div class="slide-two fade">
+                            <img src="./media/desktop/slide2-bg6.jpg" alt="Imagem 6" class="img-fluid">
+                            <div class="text-slide">Texto do Slide 6</div>
+                        </div>
+
+                        <div class="slide-two fade">
+                            <img src="./media/desktop/slide2-bg7.jpg" alt="Imagem 7" class="img-fluid">
+                            <div class="text-slide">Texto do Slide 7</div>
+                        </div>
+                
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                    </div>
+                
+                </div>
                  <!--Slide-02-->     
             </div>
 
@@ -263,8 +336,6 @@
                </div>      
             </div>
 
-           
-
             <div class="row-s101">
                 <div class="col-sm-12-s101 spacing">
                 
@@ -314,7 +385,7 @@
                              <p class="p-left txt-silver">Duração típica da bateria*</p>
                             </div>
  
-                            <div class="linha-vertical"></div>
+                            <div class="linha-vertical-2"></div>
                             
                             <div>
                              <h2 class="subtitle-grid txt-verde">9 dias</h2>
@@ -322,7 +393,7 @@
                             </div>
  
  
-                            <div class="linha-vertical"></div> 
+                            <div class="linha-vertical-2"></div> 
  
                             <div>
                              <h2 class="subtitle-grid txt-verde">6,6 dias</h2>
@@ -468,6 +539,67 @@
   
   </div>
  </main>
+
+
+
+<script>
+   $(document).ready(function() {
+    const $slides = $('#slides');
+    const $dotsContainer = $('#dots-container');
+    const $textItem = $('#text-item');
+
+    const slideTexts = ["Texto do Item 01", "Texto do Item 02", "Texto do Item 03", "Texto do Item 04"];
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      $slides.css('transform', `translateX(${-index * 100}%)`);
+      $textItem.text(slideTexts[index]);
+
+      $('.dot').each(function(i, dot) {
+        $(dot).toggleClass('active', i === index);
+      });
+    }
+
+    function createDots() {
+      for (let i = 0; i < slideTexts.length; i++) {
+        const $dot = $('<span>').addClass('dot').on('click', () => showSlide(i));
+        $dotsContainer.append($dot);
+      }
+    }
+
+    function autoPlay() {
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slideTexts.length;
+        showSlide(currentSlide);
+      }, 3000); // Altera o slide a cada 3 segundos
+    }
+
+    createDots();
+    showSlide(currentSlide);
+    autoPlay();
+  });
+
+
+  let slideIndex = 0;
+showSlides();
+
+function changeSlide(n) {
+    slideIndex += n - 1;
+    showSlides();
+}
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide-two");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 300000); // Altera o slide a cada 3 segundos
+}
+</script>
 
 </body>
 </html>
