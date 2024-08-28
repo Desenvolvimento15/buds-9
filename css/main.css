@@ -500,16 +500,10 @@
     }
 
     .text-slide {
-    color: #000;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 10px;
     position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    text-align: center;
+    top: 27%;
+    transform: translateX(20%);
+    width: 39%;
     }
 
     .prev, .next {
@@ -530,6 +524,7 @@
     .next {
     right: 0;
     border-radius: 3px 0 0 3px;
+   
     }
 
     .prev:hover, .next:hover {
