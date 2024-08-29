@@ -241,12 +241,13 @@
 
     .grid-title {
     position: absolute;
-    right: 35rem;
-    top: 27rem;
+    top: 25rem;
     bottom: 0;
-    height: 6rem;
+    height: 20vh;
     display: flex;
     flex-direction: column;
+    transform: translate( 20%);
+    z-index: 1;
     }
 
     .grid-container-03 {
@@ -334,7 +335,6 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    /* align-content: center; */
     }
 
 
@@ -716,9 +716,7 @@
     font-size: 1rem;
     font-family: 'CamphorPro', sans-serif;
     }
-
-
-
+ 
     p.text-title{
     font-family: 'Camphor Pro';
     font-size: 1.5rem;
