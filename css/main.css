@@ -92,6 +92,7 @@
     --background-white: #ffff;
     --background-black: #111;
     --background-silver: #cfcfcf;
+    --background-silver-two: #f1f1f1;
 
     --text-white: #fff;
     --text-preto: #000;
@@ -106,6 +107,7 @@
 
     .boxcolor-white{background-color: var(--background-white);}
     .boxcolor-silver{background-color: var(--background-silver);}
+    .boxcolor-silver-two{background-color: var(--background-silver-two);}
     .boxcolor-black{background-color: var(--background-black);}
 
     /***************************** Img & Icons ******************************************/
@@ -770,16 +772,15 @@
         justify-content: space-between;
         gap: 4rem;
         }
-    
         .grid-container-21 {
-        position: absolute;
-        right: 0;
-        left: 0;
-        top: 15rem;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        max-width: 47%;
+            position: absolute;
+            right: 0;
+            left: 25px;
+            top: 3rem;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            max-width: 47%;
         }
     
         .grid-22 {
