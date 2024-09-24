@@ -444,10 +444,10 @@
     max-width: 47%;
     }
 
-    .grid-13-box {
-    display: flex;
-    flex-direction: row;
-
+    .grid-13-two {
+        display: flex;
+        flex-direction: row;
+        margin-top: 3rem;
     }
 
     .grid-13-two {
