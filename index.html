@@ -476,9 +476,7 @@
         
                     </div>
                 </div>
-        
-                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
             </div>
         
         </div>  
@@ -506,8 +504,8 @@
 
         <div style="position: relative; width: 100%;">
             <div class="grid-container-10">
-                <h2 class="subtitle-center-box">Monitore a qualidade do sono  </h2>
-                <p class="p-left">Com sensores de alta precisão, os estágios do sono são identificados com mais exatidão. Dados detalhados de frequência cardíaca e oxigênio no sangue também podem ser visualizados.</p>
+                <h2 class="subtitle-center-box">Monitore a qualidade do sono</h2>
+                <p class="p-center">Com sensores de alta precisão, os estágios do sono são identificados com mais exatidão. Dados detalhados de frequência cardíaca e oxigênio no sangue também podem ser visualizados.</p>
             </div>
             <img class="img-fluid img-desk" src="./media/desktop/13.png" style="width: 40rem;">
         </div>
@@ -516,24 +514,28 @@
         <div style="position: relative; width: 100%;">
             <div class="grid-container-10">
                 <h2 class="subtitle-center-box">Monitore o ciclo do sono  </h2>
-                <p class="p-left">Registre seu ciclo de sono de longo prazo. Você pode usar os dados do ciclo de sono no aplicativo Mi Fitness como referência para entender melhor seus hábitos e padrões de sono.</p>
+                <p class="p-center">Registre seu ciclo de sono de longo prazo. Você pode usar os dados do ciclo de sono no aplicativo Mi Fitness como referência para entender melhor seus hábitos e padrões de sono.</p>
             </div>
             <img class="img-fluid img-desk" src="./media/desktop/14.png" style="width: 40rem;">
+
+            <p class="p-info txt-silver">*Você precisa ativar o monitoramento do ciclo de sono através do aplicativo Mi Fitness para obter esses dados. Este produto e o Mi Fitness não são dispositivos médicos. Os dados e alertas são apenas para referência e não devem ser usados como base para diagnóstico ou tratamento.</p>
         </div>
     </div>
+
+
        <div class="grid-13-two">
         <div style="position: relative; width: 100%;">
-            <div class="grid-container-10">
-                <h2 class="subtitle-center-box">Monitore o ciclo do sono  </h2>
-                <p class="p-left">Registre seu ciclo de sono de longo prazo. Você pode usar os dados do ciclo de sono no aplicativo Mi Fitness como referência para entender melhor seus hábitos e padrões de sono.</p>
+            <div class="grid-container-10-1">
+                <h2 class="subtitle-left-box">Análise de dados perfil Animal</h2>
+                <p class="p-left">A função de análise de dados [Sleep Animal] fornece uma análise abrangente do seu comportamento de sono com base em dados recentes do usuário, como duração do sono, níveis de estresse e exercícios. Dessa forma, você pode ter uma compreensão mais clara dos seus padrões de sono e descobrir um animal que te representa.</p>
             </div>
             <img class="img-fluid img-desk" src="./media/desktop/15.png" style="width: 40rem;">
         </div>
        
         <div style="position: relative; width: 100%;">
-            <div class="grid-container-10">
-                <h2 class="subtitle-center-box">Monitore o ciclo do sono  </h2>
-                <p class="p-left">Registre seu ciclo de sono de longo prazo. Você pode usar os dados do ciclo de sono no aplicativo Mi Fitness como referência para entender melhor seus hábitos e padrões de sono.</p>
+            <div class="grid-container-10-1">
+                <h2 class="subtitle-left-box">Dicas de sono</h2>
+                <p class="p-left">São fornecidas dicas de descanso ao longo do dia com base em seus dados de sono para melhorar seus hábitos de sono.</p>
             </div>
             <img class="img-fluid img-desk" src="./media/desktop/16.png" style="width: 40rem;">
         </div>
@@ -556,8 +558,8 @@
 
     <div style="position: relative; width: 100%;">
 
-        <div class="grid-container-10">
-            <h2 class="subtitle-center-box">Acumule pontos de vitalidade<br>Para maior motivação</h2>
+        <div class="grid-container-10-2">
+            <h2 class="subtitle-left-box">Acumule pontos de vitalidade<br>Para maior motivação</h2>
             <p class="p-left">Converta suas atividades moderadas a vigorosas de 7 dias em uma pontuação. Acumule um total de 100 pontos de vitalidade em 7 dias para obter benefícios significativos para a saúde.</p>
         </div>
 
@@ -568,8 +570,8 @@
     
     <div style="position: relative; width: 100%;">
 
-        <div class="grid-container-10">
-            <h2 class="subtitle-center-box">Cursos de corrida no pulso</h2>
+        <div class="grid-container-10-2">
+            <h2 class="subtitle-left-box">Cursos de corrida no pulso</h2>
             <p class="p-left">Desde caminhadas básicas até corridas avançadas de resistência aeróbica, há suporte para 10 cursos de corrida diferentes.</p>
         </div>
 
@@ -788,77 +790,7 @@
 </div>
  </main>
 
-
-
-<script>
-   $(document).ready(function() {
-    const $slides = $('#slides');
-    const $dotsContainer = $('#dots-container');
-    const $textItem = $('#text-item');
-
-    const slideTexts = ["Texto do Item 01", "Texto do Item 02", "Texto do Item 03", "Texto do Item 04"];
-
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      $slides.css('transform', `translateX(${-index * 100}%)`);
-      $textItem.text(slideTexts[index]);
-
-      $('.dot').each(function(i, dot) {
-        $(dot).toggleClass('active', i === index);
-      });
-    }
-
-    function createDots() {
-      for (let i = 0; i < slideTexts.length; i++) {
-        const $dot = $('<span>').addClass('dot').on('click', () => showSlide(i));
-        $dotsContainer.append($dot);
-      }
-    }
-
-    function autoPlay() {
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % slideTexts.length;
-        showSlide(currentSlide);
-      }, 1000); // Altera o slide a cada 3 segundos
-    }
-
-    createDots();
-    showSlide(currentSlide);
-    autoPlay();
-  });
-
-
-  let slideIndex = 0;
-showSlides();
-
-function changeSlide(n) {
-    slideIndex += n - 1;
-    showSlides();
-}
-
-function showSlides() {
-    let slides = document.getElementsByClassName("slide-two");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 300000); // Altera o slide a cada 3 segundos
-}
-
-function showSlides() {
-    let slides = document.getElementsByClassName("slide-tree");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 300000); // Altera o slide a cada 3 segundos
-}
-</script>
+<script src="./main.js"></script>
 
 </body>
 </html>
